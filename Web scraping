@@ -1,0 +1,16 @@
+import requests
+result = requests.get('https://www.ccilindia.com/Pages/default.aspx')
+import bs4
+from bs4 import BeautifulSoup
+soup = bs4.BeautifulSoup(result.text,'html')
+callltr = soup.find('td', text="CALL").find_next_sibling("td").find_next_sibling("td").find_next_sibling("td").find_next_sibling("td").text
+callwar = soup.find('td', text="CALL").find_next_sibling("td").find_next_sibling("td").find_next_sibling("td").find_next_sibling("td").find_next_sibling("td").find_next_sibling("td").text
+trepwar = soup.find('td', text="TREP").find_next_sibling("td").find_next_sibling("td").find_next_sibling("td").find_next_sibling("td").find_next_sibling("td").find_next_sibling("td").text
+repowar = soup.find('td', text="REPO").find_next_sibling("td").find_next_sibling("td").find_next_sibling("td").find_next_sibling("td").find_next_sibling("td").find_next_sibling("td").text
+values_list = []
+values_list.append(callltr)
+values_list.append(callwar)
+values_list.append(trepwar)
+values_list.append(repowar)
+df_transposed=pd.DataFrame(values_list).T
+df_transposed.columns = ['CALLLTR', 'CALLWAR', 'TREPWAR', 'REPOWAR']
