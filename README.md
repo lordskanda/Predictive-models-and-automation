@@ -1,0 +1,2 @@
+# Predictive-models-and-automation
+This repository contains code demonstrating web scraping of Indian debt market numerical data to be shortly go live, predictive models that show which customers are likely to switch to other telecom service provider, clustering using both k-means and hierarchical to group countries that are in need of financial aid, regression demonstration using both ridge and lasso.  
